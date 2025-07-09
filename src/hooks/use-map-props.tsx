@@ -3,19 +3,20 @@ import { MapInitConfig } from "@/lib/map/config";
 import { BASE_MAP_STYLES } from "@/lib/map/styles";
 import { getParcelByLngLat } from "@/lib/third-parties";
 import { ErrorEvent, MapLayerMouseEvent } from "maplibre-gl";
-import { usePathname, useSearchParams } from "next/navigation";
+import { useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { MapProps, ViewStateChangeEvent } from "react-map-gl/maplibre";
 
 export const useMapProps = () => {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const { mapFilter, setMapFilter } = useMapFilter();
 
   const mapStyle = BASE_MAP_STYLES[mapFilter.base];
 
   const getCoordinates = () => {
+    const searchParams = new URLSearchParams(location.search);
     const lat = searchParams.get("lat");
     const lng = searchParams.get("lng");
     const zoom = searchParams.get("zoom");
@@ -37,12 +38,12 @@ export const useMapProps = () => {
   const handleMoveEnd = (e: ViewStateChangeEvent) => {
     const { longitude, latitude, zoom } = e.viewState;
 
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(location.search);
     params.set("lat", latitude.toFixed(6));
     params.set("lng", longitude.toFixed(6));
     params.set("zoom", zoom.toFixed(2));
 
-    window.history.replaceState(null, "", `${pathname}?${params.toString()}`);
+    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
   };
 
   const handleClick = async (e: MapLayerMouseEvent) => {
