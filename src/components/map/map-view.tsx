@@ -1,5 +1,3 @@
-"use client";
-
 import { MapOverlays } from "@/components/map/map-overlays";
 import { MapPolygons } from "@/components/map/map-polygons";
 import { useMapProps } from "@/hooks/use-map-props";
