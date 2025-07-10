@@ -1,5 +1,3 @@
-"use client";
-
 import { formatNumber } from "@/lib/utils";
 import { Parcel } from "@/types/common";
 import { ExternalLinkIcon, LandPlotIcon } from "lucide-react";
