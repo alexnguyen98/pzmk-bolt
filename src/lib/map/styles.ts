@@ -34,10 +34,6 @@ export const MAP_LAYER_IDS = {
     source: "cadastre-black-source",
     layer: "cadastre-black-layer",
   },
-  "state-owned": {
-    source: "state-owned-source",
-    layer: "state-owned-layer",
-  },
   "selected-parcel": {
     source: "selected-parcel-source",
     "layer-fill": "selected-parcel-layer-fill",
@@ -174,24 +170,6 @@ export const OVERLAY_MAP_STYLES: {
       source: MAP_LAYER_IDS["cadastre-black"].source,
       type: "raster",
       minzoom: CADASTRE_MAX_ZOOM,
-    },
-  },
-  "state-owned": {
-    source: {
-      id: MAP_LAYER_IDS["state-owned"].source,
-      type: "raster",
-      tiles: [
-        "https://tiles.ceskazeme.com/tile.png?slug=state_ownership_single_color&z={z}&y={x}&x={y}",
-      ],
-      tileSize: 256,
-    },
-    layer: {
-      id: MAP_LAYER_IDS["state-owned"].layer,
-      source: MAP_LAYER_IDS["state-owned"].source,
-      type: "raster",
-      paint: {
-        "raster-opacity": 0.6,
-      },
     },
   },
 };

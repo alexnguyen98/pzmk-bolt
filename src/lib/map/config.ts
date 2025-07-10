@@ -1,6 +1,6 @@
 export type BaseLayer = "default" | "orto" | "orto-high" | "contour";
 
-export type OverlayLayer = "cadastre" | "state-owned";
+export type OverlayLayer = "cadastre";
 
 export type LayerType = BaseLayer | OverlayLayer;
 

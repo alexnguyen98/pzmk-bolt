@@ -30,12 +30,5 @@ export const BASE_LAYER_LIST: LayerListItem = {
 export const OVERLAY_LAYER_LIST: LayerListItem = {
   icon: <MapIcon size={20} />,
   title: "Overlays",
-  items: [
-    { type: "cadastre", title: "Katastralni vrstva" },
-    {
-      type: "state-owned",
-      title: "Majetek státu",
-      description: "Pozemky a budovy vlastněné státními institucemi",
-    },
-  ],
+  items: [{ type: "cadastre", title: "Katastralni vrstva" }],
 };
