@@ -1,5 +1,3 @@
-"use client";
-
 import { DetailContent } from "@/components/detail/detail-content";
 import { useMapFilter } from "@/context/map-filter";
 import { cn } from "@/lib/utils";
