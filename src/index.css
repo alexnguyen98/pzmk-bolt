@@ -62,9 +62,9 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @reference border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @reference bg-background text-foreground font-sans;
   }
 }
