@@ -1,5 +1,3 @@
-"use client";
-
 import { MapLayerList } from "@/components/map/map-layer-list";
 import { cn } from "@/lib/utils";
 import { LayersIcon, XIcon } from "lucide-react";
